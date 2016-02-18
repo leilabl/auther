@@ -1,10 +1,8 @@
 app.controller('SignupCtrl', function($scope, Signup, $state) {
   
-  $scope.createUser = function() {
-    Signup.createUser({
-      email: $scope.user.email,
-      password: $scope.user.password
-    }).then(function() {
+  $scope.signup = function(user) {
+    Signup.createUser(user)
+    .then(function() {
       $state.go('stories');
     })
   }

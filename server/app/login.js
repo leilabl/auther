@@ -8,6 +8,7 @@ var User = require('../api/users/user.model');
 var session = require('express-session');
 
 router.post('/', function (req, res, next) {
+	console.log(req.body)
 	var email = req.body.email;
 	var password = req.body.password;
 	User.findOne({
