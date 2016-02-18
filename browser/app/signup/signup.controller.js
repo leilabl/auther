@@ -1,7 +1,7 @@
-app.controller('SignupCtrl', function($scope, Signup, $state) {
+app.controller('SignupCtrl', function($scope, Auth, $state) {
   
   $scope.signup = function(user) {
-    Signup.createUser(user)
+    Auth.signup(user)
     .then(function() {
       $state.go('stories');
     })

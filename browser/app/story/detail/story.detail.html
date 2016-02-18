@@ -1,7 +1,7 @@
 <div class="container story-container">
 	<ul class="list-inline large-font">
 		<li>
-			<span contenteditable
+			<span contenteditable="{{ editPermission }}"
 				  class="large-font"
 				  ng-model="story.title"
 				  ng-model-options="{debounce: 500}"></span>
@@ -10,11 +10,12 @@
 		<li>
 			<select ng-options="user as user.name for user in users track by user._id"
 					ng-model="story.author"
-					ng-model-options="{debounce: 500}"></select>
+					ng-model-options="{debounce: 500}" 
+					ng-disabled="{{ !editPermission }}"></select>
 		</li>
 	</ul>
 	<br>
-	<p contenteditable
+	<p contenteditable="{{ editPermission }}"
 		ng-model="story.paragraphs"
 		ng-model-options="{debounce: 500}"
 		ng-list="<br><br>"

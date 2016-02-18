@@ -1,8 +1,9 @@
-app.controller('LoginCtrl', function($scope, LoginFactory, $state) {
+app.controller('LoginCtrl', function($scope, Auth, $state) {
   $scope.login = function(user) {
     console.log(user);
 
-    LoginFactory.login(user).then(function(user) {
+    Auth.login(user)
+    .then(function(user) {
       // console.log(user);
       $state.go('stories');
     });
