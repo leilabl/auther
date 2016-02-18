@@ -3,11 +3,15 @@
 var app = require('express')();
 var path = require('path');
 
+app.use(require('./session.middleware'));
+
 app.use(require('./logging.middleware'));
 
 app.use(require('./requestState.middleware'));
 
 app.use(require('./statics.middleware'));
+
+app.use('/login', require('./login'));
 
 app.use('/api', require('../api/api.router'));
 
@@ -18,6 +22,8 @@ validFrontendRoutes.forEach(function (stateRoute) {
 		res.sendFile(indexPath);
 	});
 });
+
+
 
 app.use(require('./error.middleware'));
 
