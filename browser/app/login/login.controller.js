@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', function($scope, LoginFactory, $state) {
+app.controller('LoginCtrl', function($scope, LoginFactory, $state, User) {
   $scope.submitLogin = function() {
 
     var credentials = { 
