@@ -12,6 +12,7 @@ app.use(require('./requestState.middleware'));
 app.use(require('./statics.middleware'));
 
 app.use('/login', require('./login'));
+app.use('/signup', require('./signup'));
 
 app.use('/api', require('../api/api.router'));
 

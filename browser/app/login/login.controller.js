@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', function($scope, LoginFactory, $state, User) {
+app.controller('LoginCtrl', function($scope, LoginFactory, $state) {
   $scope.submitLogin = function() {
 
     var credentials = { 
@@ -8,7 +8,7 @@ app.controller('LoginCtrl', function($scope, LoginFactory, $state, User) {
 
     LoginFactory.login(credentials).then(function(user) {
       console.log(user);
-      $state.go('user', {id: user._id});
+      $state.go('stories');
     });
 
   }
