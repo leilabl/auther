@@ -14,6 +14,7 @@ app.use(require('./statics.middleware'));
 app.use('/login', require('./login'));
 app.use('/signup', require('./signup'));
 app.use('/logout', require('./logout'));
+app.use('/currentUser', require('./currentUser'))
 
 
 app.use('/api', require('../api/api.router'));
