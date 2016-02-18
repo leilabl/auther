@@ -11,7 +11,6 @@ app.controller('StoryDetailCtrl', function ($scope, story, users, Auth) {
 
   Auth.getUser()
   .then(function(user) {
-    console.log(currentUser);
     if (user) {
       if (user.isAdmin) $scope.editPermission = true;
     }

@@ -1,11 +1,11 @@
 app.factory('Auth', function($state, $http) {
 
   var Auth = {};
+  var currentUser;
 
   $http.get('/currentUser')
   .then(function(res) {
-    console.log(res.data.user);
-    var currentUser = res.data.user;
+    currentUser = res.data.user;
   })
 
   Auth.signup = function(data) {

@@ -10,7 +10,8 @@
 		<li>
 			<select ng-options="user as user.name for user in users track by user._id"
 					ng-model="story.author"
-					ng-model-options="{debounce: 500}" ng-disabled="{{ !editPermission }}"></select>
+					ng-model-options="{debounce: 500}" 
+					ng-disabled="{{ !editPermission }}"></select>
 		</li>
 	</ul>
 	<br>
